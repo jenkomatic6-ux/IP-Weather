@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <h1>Vsi obiski</h1>
+
+        {% if obiski %}
+        <table>
+            <tr>
+                <th>Čas</th>
+                <th>IP</th>
+                <th>Država</th>
+            </tr>
+            {% for o in obiski %}
+            <tr>
+                <td>{{ o.cas or 'brez časa' }}</td>
+                <td>{{ o.ip }}</td>
+                <td>{{ o.drzava }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>Še noben obisk.</p>
+        {% endif %}
+
+        <p><a href="/">Nazaj</a></p>
+
+    </body>
+</html>
